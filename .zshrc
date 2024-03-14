@@ -108,6 +108,7 @@ alias cfgnvim="cd ~/.config/nvim"
 alias tomorrow="nvim ~/notes/tomorrow"
 alias maksServer="cd ~/servers/maksim/1.20.1/ && ./start.sh"
 alias config="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias manru="man --locale=ru_RU.UTF-8"
 
 # temp aliases 
 alias adventofcode="cd ~/code/advent-of-code/2023/"

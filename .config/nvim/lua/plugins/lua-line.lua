@@ -36,5 +36,6 @@ require('lualine').setup {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {}
+    extensions = {},
+	theme = 'gruvbox-material',
 }

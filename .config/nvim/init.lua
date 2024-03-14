@@ -1,4 +1,3 @@
-require("core.options")
 require("core.keymaps")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -37,7 +36,12 @@ require("lazy").setup({
 		'saadparwaiz1/cmp_luasnip',
 		'L3MON4D3/LuaSnip',
 	},
+	-- Colorschemes
+	{
+		"sainnhe/gruvbox-material"
+	}
 
 })
 
+require("core.options")
 require("plugins.include")
