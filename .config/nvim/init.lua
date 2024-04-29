@@ -14,11 +14,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
-	{ "nvim-treesitter/nvim-treesitter", build=":TSUpdate" },
+	-- Navigation
 	{ "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ 
+		"nvim-telescope/telescope-fzf-native.nvim", 
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" ,
+	},
+	{ "nvim-telescope/telescope.nvim", tag = "0.1.6", dependencies = "nvim-lua/plenary.nvim" },
+	-- QOL
 	{ "windwp/nvim-autopairs" },
+	{ "nvim-lualine/lualine.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
+	{ "nvim-treesitter/nvim-treesitter", build=":TSUpdate" },
+	{'akinsho/toggleterm.nvim', version = "*", config = true},
 	-- LSP
 	{
 		"williamboman/mason.nvim",
@@ -33,14 +41,13 @@ require("lazy").setup({
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lua",
-		'saadparwaiz1/cmp_luasnip',
-		'L3MON4D3/LuaSnip',
+		"saadparwaiz1/cmp_luasnip",
+		"L3MON4D3/LuaSnip",
 	},
 	-- Colorschemes
 	{
 		"sainnhe/gruvbox-material"
 	}
-
 })
 
 require("core.options")
